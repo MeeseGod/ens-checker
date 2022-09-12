@@ -5,9 +5,8 @@ export default async function GetENSInfo(value){
     const ensOwner = await web3.eth.ens.getOwner(`${value}.eth`);
     const ensResolver = await web3.eth.ens.getResolver(`${value}.eth`);
 
-    console.log(ensResolver)
-
     const ensInfo = {
+        ensName : value,
         ensOwner : ensOwner,
         ensResolver : ensResolver,
     };

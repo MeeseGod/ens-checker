@@ -8,8 +8,13 @@ export default function App() {
   const [ensInfo, setENSInfo] = useState({});
 
   async function handleSearch(value){
-    setSearchValue(value);
-    setENSInfo(await GetENSInfo(value));
+    if(value.length < 3){
+      alert("Error - Domains can not be less than 3 characters");
+    }
+    else{
+      setSearchValue(value);
+      setENSInfo(await GetENSInfo(value));
+    };
   };
 
   return (
