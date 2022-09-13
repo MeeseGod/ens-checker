@@ -8,8 +8,7 @@ export default function Search(props){
     };
 
     return <div className="searchContainer">
-        <input type={"text"} placeholder="Search for domain..." onChange={handleInputChange}></input>
-        <button onClick={() => props.handleSearch(inputValue)}>Search</button>
-        {inputValue}
+        <input type={"text"} placeholder="Search for domain..." onChange={handleInputChange} className="searchBar"></input>
+        <button onClick={() => props.handleSearch(inputValue)} className="searchButton">Search</button>
     </div>
 };

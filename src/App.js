@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./stylesheets/display.css";
 import Search from "./Components/Search";
 import GetENSInfo from "./Components/GetENSInfo";
 import ENSDisplay from "./Components/ENSDisplay";
@@ -19,6 +20,7 @@ export default function App() {
 
   return (
     <div className="App">
+      <h1>ENS Checker</h1>
       <Search handleSearch = {handleSearch}/>
       <ENSDisplay searchValue = {searchValue} ensInfo = {ensInfo}/>
     </div>
