@@ -48,6 +48,15 @@ body{
     align-items: center;
 }
 
+.ownerAddress{
+    text-decoration: none;
+    color: white;
+}
+
+.ownerAddress:hover{
+    animation: fadeOwnerColor 0.5s forwards;
+}
+
 .statusRegistered{
     color: rgb(255, 139, 139);
     margin-left: 15px;
@@ -61,8 +70,7 @@ body{
 .validityImage{
     height: 100px;
     width: 100px;
-    animation: flipOver 1s;
-    margin-bottom: 30px;
+    animation: flipOver 0.8s;
 }
 
 .resultLinks{
@@ -74,6 +82,7 @@ body{
 .linkLogo{
     width: 50px;
     animation: fadeIn 1s forwards;
+    margin-top: 20px;
 }
 
 .searchContainer{
@@ -100,7 +109,7 @@ body{
 }
 
 .searchButton:hover, .searchButton:active{
-    animation: fadeColor 0.3s forwards;
+    animation: fadeSearchColor 0.3s forwards;
 }
 
 @keyframes flipOver {
@@ -112,12 +121,18 @@ body{
     }
 }
 
-@keyframes fadeColor {
+@keyframes fadeSearchColor {
     0%{
 
     }
     100%{
         background-color: rgb(172, 181, 207);
+    }
+}
+
+@keyframes fadeOwnerColor {
+    100%{
+        color: rgb(159, 225, 255)
     }
 }
 
