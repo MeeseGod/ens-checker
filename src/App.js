@@ -20,7 +20,7 @@ export default function App() {
 
   return (
     <div className="App">
-      <h1>ENS Checker</h1>
+      <h1 className="appHeader">ENS Checker</h1>
       <Search handleSearch = {handleSearch}/>
       <ENSDisplay searchValue = {searchValue} ensInfo = {ensInfo}/>
     </div>
