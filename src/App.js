@@ -5,7 +5,6 @@ import GetENSInfo from "./Components/GetENSInfo";
 import ENSDisplay from "./Components/ENSDisplay";
 
 export default function App() {
-  const [searchValue, setSearchValue] = useState("");
   const [ensInfo, setENSInfo] = useState({});
 
   async function handleSearch(value){
@@ -13,16 +12,17 @@ export default function App() {
       alert("Error - Domains can not be less than 3 characters");
     }
     else{
-      setSearchValue(value);
       setENSInfo(await GetENSInfo(value));
     };
   };
 
   return (
     <div className="App">
-      <h1 className="appHeader">ENS Checker</h1>
-      <Search handleSearch = {handleSearch}/>
-      <ENSDisplay searchValue = {searchValue} ensInfo = {ensInfo}/>
+      <div className="appTranslate">
+        <h1 className="appHeader">ENS Checker</h1>
+        <Search handleSearch = {handleSearch}/>
+        <ENSDisplay ensInfo = {ensInfo}/>
+      </div>
     </div>
   );
 };

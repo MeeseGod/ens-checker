@@ -2,8 +2,8 @@ export default function ENSDisplay(props){
     function isOwned(){
         if(props.ensInfo.ensOwner === "0x0000000000000000000000000000000000000000"){
             return <div className="results">
-                <p>{props.ensInfo.ensName}.eth: Not Registered</p>
-                <img className="validityImage" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Eo_circle_green_checkmark.svg/2048px-Eo_circle_green_checkmark.svg.png" alt="A green checkmark"></img>
+                <div className="registryStatus">{props.ensInfo.ensName}.eth: <p className="statusUnregistered">Not Registered</p></div>
+                <img key={props.ensInfo.ensName} className="validityImage" src="https://i.ibb.co/b62cdkB/green-Check.png" alt="A blue checkmark"></img>
                 <div>
                     <a href={`https://app.ens.domains/name/${props.ensInfo.ensName}.eth`} target="_blank" rel="noreferrer">
                         <img src="https://464911102-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/collections%2F2TjMAeHSzwlQgcOdL48E%2Ficon%2FKWP0gk2C6bdRPliWIA6o%2Fens%20transparent%20background.png?alt=media&token=bd28b063-5a75-4971-890c-97becea09076" className="linkLogo" alt="ens logo"></img>
@@ -16,7 +16,8 @@ export default function ENSDisplay(props){
         }
         else{
             return <div className="results">
-                <p>{props.ensInfo.ensName}.eth: Registered</p>
+                <div className="registryStatus">{props.ensInfo.ensName}.eth:<p className="statusRegistered">Registered</p></div>
+                <img key={props.ensInfo.ensName} className="validityImage" src="https://i.ibb.co/7ptyPRg/redCross.png" alt="A red cross (X)"></img>
                 <p>Owner: {props.ensInfo.ensOwner}</p>
                 <div className="resultLinks">
                     <a href={`https://app.ens.domains/name/${props.ensInfo.ensName}.eth`} target="_blank" rel="noreferrer">
